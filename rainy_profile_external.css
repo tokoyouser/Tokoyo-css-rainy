@@ -1,0 +1,278 @@
+#rainy-hover-profile{
+  position:relative;
+  overflow:hidden;
+  max-width:900px;
+  min-height:760px;
+  margin:18px auto;
+  padding:22px;
+  color:#eaf7ff;
+  background:
+    radial-gradient(circle at 18% 22%,rgba(93,175,205,.24) 0 120px,transparent 122px),
+    radial-gradient(circle at 82% 10%,rgba(190,235,255,.13) 0 150px,transparent 152px),
+    linear-gradient(180deg,#02050a 0%,#071322 48%,#102f44 100%);
+  border:1px solid rgba(130,210,235,.62);
+  box-shadow:0 18px 42px rgba(0,0,0,.62),inset 0 0 0 1px rgba(255,255,255,.06);
+  font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  line-height:1.55;
+}
+#rainy-hover-profile:before,
+#rainy-hover-profile:after{
+  content:"";
+  position:absolute;
+  inset:-90px;
+  pointer-events:none;
+  background-image:repeating-linear-gradient(104deg,transparent 0 18px,rgba(205,240,255,.36) 19px 20px,transparent 21px 44px);
+  animation:rhp-rain 1.25s linear infinite;
+  opacity:.55;
+}
+#rainy-hover-profile:after{
+  filter:blur(2px);
+  opacity:.24;
+  animation-duration:2s;
+}
+@keyframes rhp-rain{
+  from{transform:translate3d(-34px,-54px,0);}
+  to{transform:translate3d(34px,54px,0);}
+}
+#rainy-hover-profile .rhp-mark{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.18;
+  background:
+    linear-gradient(45deg,transparent 32%,rgba(255,255,255,.2) 33% 48%,transparent 49%),
+    linear-gradient(135deg,transparent 45%,rgba(255,255,255,.16) 46% 60%,transparent 61%),
+    repeating-linear-gradient(90deg,transparent 0 108px,rgba(255,255,255,.08) 108px 110px);
+}
+#rainy-hover-profile .rhp-label{
+  position:relative;
+  z-index:2;
+  display:inline-block;
+  min-width:230px;
+  margin:2px 0 18px;
+  padding:9px 26px 9px 18px;
+  color:#dff7ff;
+  background:rgba(4,16,29,.72);
+  border:1px solid rgba(142,220,245,.62);
+  border-radius:28px;
+  box-shadow:0 6px 18px rgba(0,0,0,.32);
+  font-size:20px;
+  font-weight:bold;
+}
+#rainy-hover-profile .rhp-label b{
+  color:#80e5ff;
+  margin-right:9px;
+}
+#rainy-hover-profile .rhp-stage{
+  position:relative;
+  z-index:2;
+  display:flex;
+  gap:28px;
+  align-items:flex-start;
+}
+#rainy-hover-profile .rhp-left{
+  flex:0 0 43%;
+  min-height:650px;
+  position:relative;
+}
+#rainy-hover-profile .rhp-arch{
+  position:absolute;
+  left:28px;
+  right:18px;
+  top:30px;
+  bottom:20px;
+  border:4px double rgba(160,225,240,.5);
+  border-radius:170px 170px 30px 30px;
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(105,205,230,.2));
+  box-shadow:inset 0 0 48px rgba(95,190,220,.2),0 14px 28px rgba(0,0,0,.28);
+  transition:border-color .35s ease,box-shadow .35s ease;
+}
+#rainy-hover-profile .rhp-left:hover .rhp-arch{
+  border-color:rgba(225,250,255,.86);
+  box-shadow:inset 0 0 58px rgba(130,225,255,.32),0 18px 34px rgba(0,0,0,.36);
+}
+#rainy-hover-profile .rhp-figure{
+  position:absolute;
+  left:-12px;
+  right:-18px;
+  bottom:34px;
+  z-index:2;
+  text-align:center;
+  transition:transform .35s ease,filter .35s ease;
+}
+#rainy-hover-profile .rhp-left:hover .rhp-figure{
+  transform:translateY(-8px);
+}
+#rainy-hover-profile .rhp-figure img{
+  max-width:100%;
+  max-height:660px;
+  object-fit:contain;
+  filter:drop-shadow(0 16px 16px rgba(0,0,0,.55));
+}
+#rainy-hover-profile .rhp-right{
+  flex:1;
+  margin-top:112px;
+}
+#rainy-hover-profile .rhp-card{
+  padding:22px 24px 24px;
+  color:#25333c;
+  background:rgba(244,251,253,.9);
+  border:1px solid rgba(180,230,245,.68);
+  border-radius:0 30px 30px 30px;
+  box-shadow:0 18px 34px rgba(0,0,0,.36);
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+#rainy-hover-profile .rhp-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 24px 42px rgba(0,0,0,.42);
+}
+#rainy-hover-profile .rhp-name{
+  position:relative;
+  min-height:96px;
+  cursor:default;
+  border-bottom:1px solid rgba(130,160,170,.55);
+}
+#rainy-hover-profile .rhp-main,
+#rainy-hover-profile .rhp-secret{
+  transition:opacity .28s ease,transform .28s ease;
+}
+#rainy-hover-profile .rhp-secret{
+  position:absolute;
+  left:0;
+  top:0;
+  opacity:0;
+  transform:translateY(12px);
+}
+#rainy-hover-profile .rhp-name:hover .rhp-main{
+  opacity:0;
+  transform:translateY(-12px);
+}
+#rainy-hover-profile .rhp-name:hover .rhp-secret{
+  opacity:1;
+  transform:translateY(0);
+}
+#rainy-hover-profile .rhp-ja{
+  color:#151d24;
+  font-size:46px;
+  line-height:1.05;
+  font-weight:900;
+  letter-spacing:0;
+}
+#rainy-hover-profile .rhp-en{
+  margin-top:4px;
+  color:#20a8ca;
+  font-size:17px;
+  font-weight:bold;
+}
+#rainy-hover-profile .rhp-note{
+  display:inline-block;
+  margin-top:10px;
+  padding:4px 14px;
+  color:#717d85;
+  background:rgba(245,248,249,.92);
+  border-radius:14px;
+  font-size:14px;
+}
+#rainy-hover-profile .rhp-stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:18px;
+}
+#rainy-hover-profile .rhp-stat{
+  min-height:66px;
+  padding:12px;
+  background:rgba(255,255,255,.82);
+  border:1px solid rgba(150,190,200,.55);
+  border-radius:18px;
+  text-align:center;
+  transition:transform .24s ease,background .24s ease;
+}
+#rainy-hover-profile .rhp-stat:hover{
+  transform:translateY(-4px);
+  background:#ffffff;
+}
+#rainy-hover-profile .rhp-stat b{
+  display:block;
+  color:#20a8ca;
+  font-size:12px;
+}
+#rainy-hover-profile .rhp-stat span{
+  display:block;
+  margin-top:5px;
+  color:#27333b;
+  font-size:15px;
+  font-weight:bold;
+}
+#rainy-hover-profile .rhp-observe{
+  margin-top:16px;
+  overflow:hidden;
+  background:rgba(238,248,250,.92);
+  border:1px solid rgba(150,190,200,.55);
+  border-radius:18px;
+}
+#rainy-hover-profile .rhp-observe-title{
+  padding:8px 14px;
+  color:#fff;
+  background:#28add4;
+  font-weight:bold;
+  text-align:center;
+}
+#rainy-hover-profile .rhp-observe-body{
+  padding:14px 18px;
+  color:#4a5a63;
+}
+#rainy-hover-profile .rhp-tabs{
+  position:relative;
+  z-index:2;
+  margin-top:18px;
+  padding:14px;
+  background:rgba(3,12,22,.72);
+  border:1px solid rgba(120,210,235,.42);
+}
+#rainy-hover-profile .rhp-tabs input{
+  display:none;
+}
+#rainy-hover-profile .rhp-tabs label{
+  display:inline-block;
+  margin:0 6px 8px 0;
+  padding:8px 13px;
+  color:#dff7ff;
+  background:rgba(10,35,55,.9);
+  border:1px solid rgba(120,210,235,.45);
+  cursor:pointer;
+  font-weight:bold;
+  transition:transform .22s ease,background .22s ease,color .22s ease;
+}
+#rainy-hover-profile .rhp-tabs label:hover{
+  transform:translateY(-3px);
+  color:#06111f;
+  background:#bfefff;
+}
+#rainy-hover-profile .rhp-panel{
+  display:none;
+  padding:16px 18px;
+  color:#eaf7ff;
+  background:rgba(5,18,31,.9);
+  border:1px solid rgba(120,210,235,.35);
+}
+#rainy-hover-profile #rhp-tab1:checked ~ .rhp-labels label[for="rhp-tab1"],
+#rainy-hover-profile #rhp-tab2:checked ~ .rhp-labels label[for="rhp-tab2"],
+#rainy-hover-profile #rhp-tab3:checked ~ .rhp-labels label[for="rhp-tab3"],
+#rainy-hover-profile #rhp-tab4:checked ~ .rhp-labels label[for="rhp-tab4"]{
+  color:#06111f;
+  background:#dff7ff;
+}
+#rainy-hover-profile #rhp-tab1:checked ~ .rhp-panels .rhp-p1,
+#rainy-hover-profile #rhp-tab2:checked ~ .rhp-panels .rhp-p2,
+#rainy-hover-profile #rhp-tab3:checked ~ .rhp-panels .rhp-p3,
+#rainy-hover-profile #rhp-tab4:checked ~ .rhp-panels .rhp-p4{
+  display:block;
+}
+@media(max-width:760px){
+  #rainy-hover-profile{padding:14px;min-height:0;}
+  #rainy-hover-profile .rhp-stage{display:block;}
+  #rainy-hover-profile .rhp-left{min-height:620px;}
+  #rainy-hover-profile .rhp-right{margin-top:20px;}
+  #rainy-hover-profile .rhp-ja{font-size:36px;}
+}
