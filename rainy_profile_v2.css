@@ -98,7 +98,10 @@ td.com2 td{
 #rainy-hover-profile .rhp-name br,
 #rainy-hover-profile .rhp-main > br,
 #rainy-hover-profile .rhp-secret > br,
-#rainy-hover-profile .rhp-stats > br{
+#rainy-hover-profile .rhp-stats > br,
+#rainy-hover-profile .rhp-tabs > br,
+#rainy-hover-profile .rhp-labels br,
+#rainy-hover-profile .rhp-panels > br{
   display:none !important;
 }
 #rainy-hover-profile .rhp-mark{
