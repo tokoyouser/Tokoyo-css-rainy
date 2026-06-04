@@ -124,51 +124,51 @@ td.com2 td{
 #rainy-hover-profile .rhp-stage{
   position:relative;
   z-index:2;
-  display:flex;
-  gap:24px;
-  align-items:flex-start;
+  display:block;
+  min-height:640px;
 }
 #rainy-hover-profile .rhp-left{
-  flex:0 0 46%;
   position:relative;
-  height:560px;
+  height:640px;
   margin:0;
   min-width:0;
 }
 #rainy-hover-profile .rhp-arch{
   position:absolute;
-  left:58px;
-  right:34px;
-  top:18px;
-  bottom:0;
+  left:72px;
+  width:390px;
+  top:28px;
+  bottom:20px;
   border:4px double rgba(160,225,240,.5);
-  border-radius:160px 160px 28px 28px;
+  border-radius:190px 190px 30px 30px;
   background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(105,205,230,.2));
   box-shadow:inset 0 0 42px rgba(95,190,220,.2);
 }
 #rainy-hover-profile .rhp-figure{
   position:absolute;
-  left:-18px;
-  right:-18px;
-  bottom:0;
+  left:0;
+  width:560px;
+  bottom:8px;
   z-index:2;
-  text-align:center;
+  text-align:left;
   transition:transform .35s ease;
 }
 #rainy-hover-profile .rhp-left:hover .rhp-figure{
   transform:translateY(-8px);
 }
 #rainy-hover-profile .rhp-figure img{
-  max-width:112%;
-  max-height:560px;
+  max-width:100%;
+  max-height:630px;
   object-fit:contain;
   filter:drop-shadow(0 16px 16px rgba(0,0,0,.55));
 }
 #rainy-hover-profile .rhp-right{
-  flex:1 1 0;
-  position:relative;
+  position:absolute;
+  right:26px;
+  top:78px;
+  width:43%;
   z-index:3;
-  margin:92px 0 0;
+  margin:0;
   min-width:0;
 }
 #rainy-hover-profile .rhp-card{
@@ -288,7 +288,7 @@ td.com2 td{
 #rainy-hover-profile .rhp-tabs{
   position:relative;
   z-index:2;
-  margin-top:14px;
+  margin-top:0;
   padding:12px;
   background:rgba(3,12,22,.72);
   border:1px solid rgba(120,210,235,.42);
@@ -297,6 +297,7 @@ td.com2 td{
 @media(max-width:520px){
   #rainy-hover-profile .rhp-stage{
     display:block;
+    min-height:0;
   }
   #rainy-hover-profile .rhp-left{
     height:500px;
@@ -305,16 +306,23 @@ td.com2 td{
   #rainy-hover-profile .rhp-arch{
     left:52px;
     right:52px;
+    width:auto;
   }
   #rainy-hover-profile .rhp-figure{
     left:0;
     right:0;
+    width:auto;
+    text-align:center;
   }
   #rainy-hover-profile .rhp-figure img{
     max-width:100%;
     max-height:500px;
   }
   #rainy-hover-profile .rhp-right{
+    position:relative;
+    right:auto;
+    top:auto;
+    width:auto;
     margin:0;
   }
 }
