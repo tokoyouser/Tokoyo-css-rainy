@@ -95,6 +95,12 @@ td.com2 td{
 #rainy-hover-profile *{
   box-sizing:border-box;
 }
+#rainy-hover-profile .rhp-name br,
+#rainy-hover-profile .rhp-main > br,
+#rainy-hover-profile .rhp-secret > br,
+#rainy-hover-profile .rhp-stats > br{
+  display:none !important;
+}
 #rainy-hover-profile .rhp-mark{
   position:absolute;
   inset:0;
