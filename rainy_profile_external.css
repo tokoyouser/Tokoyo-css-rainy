@@ -160,6 +160,69 @@
   right:-6px;
   bottom:34px;
   z-index:2;
+  text-align:center;#rainy-hover-profile .rhp-mark{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.18;
+  background:
+    linear-gradient(45deg,transparent 32%,rgba(255,255,255,.2) 33% 48%,transparent 49%),
+    linear-gradient(135deg,transparent 45%,rgba(255,255,255,.16) 46% 60%,transparent 61%),
+    repeating-linear-gradient(90deg,transparent 0 108px,rgba(255,255,255,.08) 108px 110px);
+}
+#rainy-hover-profile .rhp-label{
+  position:relative;
+  z-index:2;
+  display:inline-block;
+  min-width:230px;
+  margin:2px 0 18px;
+  padding:9px 26px 9px 18px;
+  color:#dff7ff;
+  background:rgba(4,16,29,.72);
+  border:1px solid rgba(142,220,245,.62);
+  border-radius:28px;
+  box-shadow:0 6px 18px rgba(0,0,0,.32);
+  font-size:20px;
+  font-weight:bold;
+}
+#rainy-hover-profile .rhp-label b{
+  color:#80e5ff;
+  margin-right:9px;
+}
+#rainy-hover-profile .rhp-stage{
+  position:relative;
+  z-index:2;
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+}
+#rainy-hover-profile .rhp-left{
+  flex:0 0 42%;
+  min-height:650px;
+  position:relative;
+}
+#rainy-hover-profile .rhp-arch{
+  position:absolute;
+  left:28px;
+  right:18px;
+  top:30px;
+  bottom:20px;
+  border:4px double rgba(160,225,240,.5);
+  border-radius:170px 170px 30px 30px;
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(105,205,230,.2));
+  box-shadow:inset 0 0 48px rgba(95,190,220,.2),0 14px 28px rgba(0,0,0,.28);
+  transition:border-color .35s ease,box-shadow .35s ease;
+}
+#rainy-hover-profile .rhp-left:hover .rhp-arch{
+  border-color:rgba(225,250,255,.86);
+  box-shadow:inset 0 0 58px rgba(130,225,255,.32),0 18px 34px rgba(0,0,0,.36);
+}
+#rainy-hover-profile .rhp-figure{
+  position:absolute;
+  left:-6px;
+  right:-6px;
+  bottom:34px;
+  z-index:2;
   text-align:center;
   transition:transform .35s ease,filter .35s ease;
 }
