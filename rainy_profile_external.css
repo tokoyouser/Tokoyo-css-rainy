@@ -2,6 +2,22 @@
 #rainy-hover-profile *{
   text-decoration:none;
 }
+html,
+body{
+  background:
+    radial-gradient(circle at 16% 18%,rgba(60,130,160,.22) 0 130px,transparent 132px),
+    radial-gradient(circle at 84% 12%,rgba(125,200,225,.14) 0 160px,transparent 162px),
+    linear-gradient(180deg,#02050a 0%,#071322 48%,#102f44 100%) !important;
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:-90px;
+  pointer-events:none;
+  background-image:repeating-linear-gradient(104deg,transparent 0 18px,rgba(205,240,255,.22) 19px 20px,transparent 21px 44px);
+  animation:rhp-rain 1.45s linear infinite;
+  opacity:.42;
+}
 body td.com1,
 table td.com1,
 td.com1{
@@ -41,10 +57,12 @@ td.com2 td{
 #rainy-hover-profile{
   position:relative;
   overflow:hidden;
-  width:100%;
-  max-width:612px;
-  margin:6px auto 0;
-  padding:12px;
+  width:calc(100vw - 58px);
+  max-width:none;
+  min-width:0;
+  margin:14px 0 0 calc(50% - 50vw + 29px);
+  padding:18px;
+  transform:none;
   color:#eaf7ff;
   background:
     radial-gradient(circle at 20% 18%,rgba(74,145,170,.28) 0 100px,transparent 102px),
@@ -107,11 +125,11 @@ td.com2 td{
   position:relative;
   z-index:2;
   display:flex;
-  gap:10px;
+  gap:24px;
   align-items:flex-start;
 }
 #rainy-hover-profile .rhp-left{
-  flex:0 0 41%;
+  flex:0 0 46%;
   position:relative;
   height:560px;
   margin:0;
@@ -119,8 +137,8 @@ td.com2 td{
 }
 #rainy-hover-profile .rhp-arch{
   position:absolute;
-  left:20px;
-  right:12px;
+  left:58px;
+  right:34px;
   top:18px;
   bottom:0;
   border:4px double rgba(160,225,240,.5);
@@ -130,8 +148,8 @@ td.com2 td{
 }
 #rainy-hover-profile .rhp-figure{
   position:absolute;
-  left:-30px;
-  right:-14px;
+  left:-18px;
+  right:-18px;
   bottom:0;
   z-index:2;
   text-align:center;
@@ -141,7 +159,7 @@ td.com2 td{
   transform:translateY(-8px);
 }
 #rainy-hover-profile .rhp-figure img{
-  max-width:128%;
+  max-width:112%;
   max-height:560px;
   object-fit:contain;
   filter:drop-shadow(0 16px 16px rgba(0,0,0,.55));
@@ -150,11 +168,11 @@ td.com2 td{
   flex:1 1 0;
   position:relative;
   z-index:3;
-  margin:70px 0 0;
+  margin:92px 0 0;
   min-width:0;
 }
 #rainy-hover-profile .rhp-card{
-  padding:14px;
+  padding:22px;
   color:#25333c;
   background:rgba(244,251,253,.92);
   border:1px solid rgba(180,230,245,.68);
@@ -166,7 +184,7 @@ td.com2 td{
 }
 #rainy-hover-profile .rhp-name{
   position:relative;
-  height:84px;
+  height:98px;
   overflow:hidden;
   cursor:default;
   border-bottom:1px solid rgba(130,160,170,.55);
@@ -197,7 +215,7 @@ td.com2 td{
 }
 #rainy-hover-profile .rhp-ja{
   color:#151d24;
-  font-size:32px;
+  font-size:42px;
   line-height:1.05;
   font-weight:900;
   letter-spacing:0;
@@ -205,7 +223,7 @@ td.com2 td{
 #rainy-hover-profile .rhp-en{
   margin-top:4px;
   color:#20a8ca;
-  font-size:14px;
+  font-size:17px;
   font-weight:bold;
 }
 #rainy-hover-profile .rhp-note{
@@ -215,17 +233,17 @@ td.com2 td{
   color:#717d85;
   background:rgba(245,248,249,.92);
   border-radius:14px;
-  font-size:12px;
+  font-size:14px;
 }
 #rainy-hover-profile .rhp-stats{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:7px;
-  margin-top:10px;
+  gap:10px;
+  margin-top:16px;
 }
 #rainy-hover-profile .rhp-stat{
   min-height:0;
-  padding:7px;
+  padding:10px;
   background:rgba(255,255,255,.84);
   border:1px solid rgba(150,190,200,.55);
   border-radius:14px;
@@ -245,11 +263,11 @@ td.com2 td{
   display:block;
   margin-top:4px;
   color:#27333b;
-  font-size:12px;
+  font-size:14px;
   font-weight:bold;
 }
 #rainy-hover-profile .rhp-observe{
-  margin-top:10px;
+  margin-top:16px;
   overflow:hidden;
   background:rgba(238,248,250,.92);
   border:1px solid rgba(150,190,200,.55);
@@ -263,9 +281,9 @@ td.com2 td{
   text-align:center;
 }
 #rainy-hover-profile .rhp-observe-body{
-  padding:10px 12px;
+  padding:14px 16px;
   color:#4a5a63;
-  font-size:13px;
+  font-size:14px;
 }
 #rainy-hover-profile .rhp-tabs{
   position:relative;
