@@ -1,3 +1,26 @@
+  position:relative;
+  height:84px;
+  overflow:hidden;
+  cursor:default;
+  border-bottom:1px solid rgba(130,160,170,.55);
+}
+#rainy-hover-profile .rhp-main,
+#rainy-hover-profile .rhp-secret{
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  transition:opacity .28s ease,transform .28s ease;
+}
+#rainy-hover-profile .rhp-main{
+  opacity:1;
+  transform:translateY(0);
+}
+#rainy-hover-profile .rhp-secret{
+  opacity:0;
+  transform:translateY(14px);
+}
+#rainy-hover-profile .rhp-name:hover .rhp-main{
   opacity:0;
   transform:translateY(-14px);
 }
