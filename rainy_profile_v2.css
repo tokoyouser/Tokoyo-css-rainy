@@ -96,6 +96,7 @@ td.com2 td{
   box-sizing:border-box;
 }
 #rainy-hover-profile .rhp-name br,
+#rainy-hover-profile > br,
 #rainy-hover-profile .rhp-main > br,
 #rainy-hover-profile .rhp-secret > br,
 #rainy-hover-profile .rhp-stats > br,
@@ -117,7 +118,7 @@ td.com2 td{
   position:relative;
   z-index:2;
   display:inline-block;
-  margin:0 0 2px;
+  margin:0 0 -8px;
   padding:7px 20px 7px 15px;
   color:#dff7ff;
   background:rgba(4,16,29,.72);
@@ -135,6 +136,7 @@ td.com2 td{
   z-index:2;
   display:block;
   min-height:610px;
+  margin-top:-6px;
 }
 #rainy-hover-profile .rhp-left{
   position:relative;
