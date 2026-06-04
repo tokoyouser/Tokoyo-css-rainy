@@ -306,9 +306,20 @@ td.com2 td{
   padding:8px 8px 10px;
   background:rgba(3,12,22,.42);
   border:1px solid rgba(120,210,235,.28);
+  display:grid;
+  grid-template-columns:92px 1fr;
+  gap:10px;
+  align-items:start;
 }
 
 @media(max-width:520px){
+  #rainy-hover-profile .rhp-tabs{
+    display:block;
+  }
+  #rainy-hover-profile .rhp-labels,
+  #rainy-hover-profile .rhp-panels{
+    grid-column:auto;
+  }
   #rainy-hover-profile .rhp-stage{
     display:block;
     min-height:0;
@@ -344,6 +355,8 @@ td.com2 td{
   display:none;
 }
 #rainy-hover-profile .rhp-tabs label{
+  position:relative;
+  overflow:hidden;
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -364,11 +377,38 @@ td.com2 td{
   box-shadow:0 8px 18px rgba(0,0,0,.28),inset 0 0 0 4px rgba(255,255,255,.05);
   transition:transform .22s ease,background .22s ease,color .22s ease,box-shadow .22s ease;
 }
+#rainy-hover-profile .rhp-tabs label:after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  border:1px solid rgba(225,250,255,.9);
+  transform:translate(-50%,-50%) scale(.2);
+  opacity:0;
+  pointer-events:none;
+}
 #rainy-hover-profile .rhp-tabs label:hover{
   transform:translateY(-5px);
   color:#06111f;
   background:radial-gradient(circle at 50% 38%,#ffffff,#bfefff 68%);
   box-shadow:0 12px 24px rgba(0,0,0,.34),0 0 18px rgba(120,220,250,.42);
+}
+#rainy-hover-profile .rhp-tabs label:hover:after{
+  animation:rhp-ripple 1.05s ease-out infinite;
+}
+#rainy-hover-profile .rhp-tabs label:active:after{
+  animation:rhp-ripple-click .42s ease-out both;
+}
+@keyframes rhp-ripple{
+  0%{opacity:.72;transform:translate(-50%,-50%) scale(.3);}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(6.2);}
+}
+@keyframes rhp-ripple-click{
+  0%{opacity:.95;transform:translate(-50%,-50%) scale(.2);}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(7);}
 }
 #rainy-hover-profile .rhp-panel{
   display:none;
@@ -379,6 +419,12 @@ td.com2 td{
   border:1px solid rgba(120,210,235,.35);
   border-radius:18px;
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);
+}
+#rainy-hover-profile .rhp-labels{
+  grid-column:1;
+}
+#rainy-hover-profile .rhp-panels{
+  grid-column:2;
 }
 #rainy-hover-profile #rhp-tab1:checked ~ .rhp-labels label[for="rhp-tab1"],
 #rainy-hover-profile #rhp-tab2:checked ~ .rhp-labels label[for="rhp-tab2"],
