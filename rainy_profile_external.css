@@ -42,9 +42,9 @@ td.com2 td{
   position:relative;
   overflow:hidden;
   width:100%;
-  max-width:590px;
-  margin:10px auto 0;
-  padding:18px;
+  max-width:612px;
+  margin:6px auto 0;
+  padding:12px;
   color:#eaf7ff;
   background:
     radial-gradient(circle at 20% 18%,rgba(74,145,170,.28) 0 100px,transparent 102px),
@@ -90,7 +90,7 @@ td.com2 td{
   position:relative;
   z-index:2;
   display:inline-block;
-  margin:0 0 12px;
+  margin:0 0 10px;
   padding:8px 22px 8px 16px;
   color:#dff7ff;
   background:rgba(4,16,29,.72);
@@ -98,7 +98,7 @@ td.com2 td{
   border-radius:28px;
   font-size:18px;
   font-weight:bold;
-  }
+}
 #rainy-hover-profile .rhp-label b{
   color:#80e5ff;
   margin-right:8px;
@@ -107,11 +107,11 @@ td.com2 td{
   position:relative;
   z-index:2;
   display:flex;
-  gap:12px;
+  gap:10px;
   align-items:flex-start;
 }
 #rainy-hover-profile .rhp-left{
-  flex:0 0 39%;
+  flex:0 0 41%;
   position:relative;
   height:560px;
   margin:0;
@@ -119,8 +119,8 @@ td.com2 td{
 }
 #rainy-hover-profile .rhp-arch{
   position:absolute;
-  left:18px;
-  right:8px;
+  left:20px;
+  right:12px;
   top:18px;
   bottom:0;
   border:4px double rgba(160,225,240,.5);
@@ -130,8 +130,8 @@ td.com2 td{
 }
 #rainy-hover-profile .rhp-figure{
   position:absolute;
-  left:-38px;
-  right:-18px;
+  left:-30px;
+  right:-14px;
   bottom:0;
   z-index:2;
   text-align:center;
@@ -141,7 +141,7 @@ td.com2 td{
   transform:translateY(-8px);
 }
 #rainy-hover-profile .rhp-figure img{
-  max-width:138%;
+  max-width:128%;
   max-height:560px;
   object-fit:contain;
   filter:drop-shadow(0 16px 16px rgba(0,0,0,.55));
@@ -150,7 +150,7 @@ td.com2 td{
   flex:1 1 0;
   position:relative;
   z-index:3;
-  margin:80px 0 0;
+  margin:70px 0 0;
   min-width:0;
 }
 #rainy-hover-profile .rhp-card{
@@ -197,7 +197,7 @@ td.com2 td{
 }
 #rainy-hover-profile .rhp-ja{
   color:#151d24;
-  font-size:30px;
+  font-size:32px;
   line-height:1.05;
   font-weight:900;
   letter-spacing:0;
@@ -219,8 +219,8 @@ td.com2 td{
 }
 #rainy-hover-profile .rhp-stats{
   display:grid;
-  grid-template-columns:1fr;
-  gap:6px;
+  grid-template-columns:repeat(2,1fr);
+  gap:7px;
   margin-top:10px;
 }
 #rainy-hover-profile .rhp-stat{
