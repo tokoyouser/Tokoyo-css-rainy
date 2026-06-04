@@ -172,6 +172,8 @@ td.com2 td{
   min-width:0;
 }
 #rainy-hover-profile .rhp-card{
+  position:relative;
+  overflow:hidden;
   padding:16px;
   color:#dcecf5;
   background:rgba(7,20,34,.86);
@@ -179,8 +181,28 @@ td.com2 td{
   border-radius:0 26px 26px 26px;
   box-shadow:0 18px 34px rgba(0,0,0,.48),inset 0 0 0 1px rgba(255,255,255,.05);
 }
+#rainy-hover-profile .rhp-card:after{
+  content:"";
+  position:absolute;
+  top:-40%;
+  bottom:-40%;
+  left:-70%;
+  width:42%;
+  pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.42),rgba(120,220,250,.34),transparent);
+  transform:skewX(-18deg);
+  opacity:0;
+}
 #rainy-hover-profile .rhp-card:hover{
   box-shadow:0 22px 38px rgba(0,0,0,.42);
+}
+#rainy-hover-profile .rhp-card:hover:after{
+  animation:rhp-card-scan .8s ease-out both;
+}
+@keyframes rhp-card-scan{
+  0%{left:-70%;opacity:0;}
+  18%{opacity:.9;}
+  100%{left:125%;opacity:0;}
 }
 #rainy-hover-profile .rhp-name{
   position:relative;
@@ -188,6 +210,26 @@ td.com2 td{
   overflow:hidden;
   cursor:default;
   border-bottom:1px solid rgba(150,225,245,.32);
+}
+#rainy-hover-profile .rhp-name:after{
+  content:"";
+  position:absolute;
+  right:8px;
+  top:50%;
+  width:12px;
+  height:12px;
+  border:1px solid rgba(160,235,255,.72);
+  border-radius:50%;
+  transform:translateY(-50%) scale(.4);
+  opacity:0;
+  pointer-events:none;
+}
+#rainy-hover-profile .rhp-name:hover:after{
+  animation:rhp-name-ripple .95s ease-out infinite;
+}
+@keyframes rhp-name-ripple{
+  0%{opacity:.85;transform:translateY(-50%) scale(.3);}
+  100%{opacity:0;transform:translateY(-50%) scale(8);}
 }
 #rainy-hover-profile .rhp-main,
 #rainy-hover-profile .rhp-secret{
@@ -259,9 +301,24 @@ td.com2 td{
   text-align:center;
   transition:transform .22s ease,background .22s ease;
 }
+#rainy-hover-profile .rhp-stat:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent 0 35%,rgba(180,240,255,.28) 48%,transparent 62%);
+  transform:translateX(-120%);
+  pointer-events:none;
+}
 #rainy-hover-profile .rhp-stat:hover{
   transform:translateY(-3px);
   background:rgba(255,255,255,.15);
+}
+#rainy-hover-profile .rhp-stat:hover:after{
+  animation:rhp-stat-flash .55s ease-out both;
+}
+@keyframes rhp-stat-flash{
+  from{transform:translateX(-120%);}
+  to{transform:translateX(120%);}
 }
 #rainy-hover-profile .rhp-stat b{
   display:block;
@@ -427,6 +484,8 @@ td.com2 td{
   100%{opacity:0;transform:translate(-50%,-50%) scale(7);}
 }
 #rainy-hover-profile .rhp-panel{
+  position:relative;
+  overflow:hidden;
   display:none;
   min-height:96px;
   padding:9px 16px 14px;
@@ -437,6 +496,21 @@ td.com2 td{
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);
   font-size:17px;
   line-height:1.46;
+}
+#rainy-hover-profile .rhp-panel:before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:2px;
+  background:linear-gradient(90deg,transparent,#8be8ff,transparent);
+  animation:rhp-panel-scan 1.15s ease-out both;
+}
+@keyframes rhp-panel-scan{
+  0%{transform:translateX(-100%);opacity:0;}
+  25%{opacity:1;}
+  100%{transform:translateX(100%);opacity:0;}
 }
 #rainy-hover-profile .rhp-labels{
   grid-column:1;
