@@ -102,9 +102,7 @@ td.com2 td{
 #rainy-hover-profile .rhp-stats > br,
 #rainy-hover-profile .rhp-tabs > br,
 #rainy-hover-profile .rhp-labels br,
-#rainy-hover-profile .rhp-panels > br,
-#rainy-hover-profile .rhp-panel > br,
-#rainy-hover-profile .rhp-observe-body > br{
+#rainy-hover-profile .rhp-panels > br{
   display:none !important;
 }
 #rainy-hover-profile .rhp-mark{
