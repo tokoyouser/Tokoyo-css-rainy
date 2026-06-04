@@ -1,40 +1,144 @@
-  position:relative;
-  height:84px;
-  overflow:hidden;
-  cursor:default;
-  border-bottom:1px solid rgba(130,160,170,.55);
-}
-#rainy-hover-profile .rhp-main,
-#rainy-hover-profile .rhp-secret{
-  position:absolute;
-  left:0;
-  top:0;
-  right:0;
-  transition:opacity .28s ease,transform .28s ease;
-}
-#rainy-hover-profile .rhp-main{
-  opacity:1;
-  transform:translateY(0);
-}
-#rainy-hover-profile .rhp-secret{
-  opacity:0;
-  transform:translateY(14px);
-}
-#rainy-hover-profile .rhp-name:hover .rhp-main{
-  opacity:0;
-  transform:translateY(-14px);
-}
-#rainy-hover-profile .rhp-name:hover .rhp-secret{
-  opacity:1;
-  transform:translateY(0);
-}
-#rainy-hover-profile .rhp-ja{
-  color:#151d24;
-  font-size:30px;
   line-height:1.05;
   font-weight:900;
   letter-spacing:0;
 }
+#rainy-hover-profile .rhp-en{
+  margin-top:4px;
+  color:#20a8ca;
+  font-size:14px;
+  font-weight:bold;
+}
+#rainy-hover-profile .rhp-note{
+  display:inline-block;
+  margin-top:9px;
+  padding:4px 14px;
+  color:#717d85;
+  background:rgba(245,248,249,.92);
+  border-radius:14px;
+  font-size:12px;
+}
+#rainy-hover-profile .rhp-stats{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:6px;
+  margin-top:10px;
+}
+#rainy-hover-profile .rhp-stat{
+  min-height:0;
+  padding:7px;
+  background:rgba(255,255,255,.84);
+  border:1px solid rgba(150,190,200,.55);
+  border-radius:14px;
+  text-align:center;
+  transition:transform .22s ease,background .22s ease;
+}
+#rainy-hover-profile .rhp-stat:hover{
+  transform:translateY(-3px);
+  background:#fff;
+}
+#rainy-hover-profile .rhp-stat b{
+  display:block;
+  color:#20a8ca;
+  font-size:12px;
+}
+#rainy-hover-profile .rhp-stat span{
+  display:block;
+  margin-top:4px;
+  color:#27333b;
+  font-size:12px;
+  font-weight:bold;
+}
+#rainy-hover-profile .rhp-observe{
+  margin-top:10px;
+  overflow:hidden;
+  background:rgba(238,248,250,.92);
+  border:1px solid rgba(150,190,200,.55);
+  border-radius:16px;
+}
+#rainy-hover-profile .rhp-observe-title{
+  padding:8px 14px;
+  color:#fff;
+  background:#28add4;
+  font-weight:bold;
+  text-align:center;
+}
+#rainy-hover-profile .rhp-observe-body{
+  padding:10px 12px;
+  color:#4a5a63;
+  font-size:13px;
+}
+#rainy-hover-profile .rhp-tabs{
+  position:relative;
+  z-index:2;
+  margin-top:14px;
+  padding:12px;
+  background:rgba(3,12,22,.72);
+  border:1px solid rgba(120,210,235,.42);
+}
+
+@media(max-width:520px){
+  #rainy-hover-profile .rhp-stage{
+    display:block;
+  }
+  #rainy-hover-profile .rhp-left{
+    height:500px;
+    margin:0 0 14px;
+  }
+  #rainy-hover-profile .rhp-arch{
+    left:52px;
+    right:52px;
+  }
+  #rainy-hover-profile .rhp-figure{
+    left:0;
+    right:0;
+  }
+  #rainy-hover-profile .rhp-figure img{
+    max-width:100%;
+    max-height:500px;
+  }
+  #rainy-hover-profile .rhp-right{
+    margin:0;
+  }
+}
+#rainy-hover-profile .rhp-tabs input{
+  display:none;
+}
+#rainy-hover-profile .rhp-tabs label{
+  display:inline-block;
+  margin:0 5px 7px 0;
+  padding:7px 10px;
+  color:#dff7ff;
+  background:rgba(10,35,55,.9);
+  border:1px solid rgba(120,210,235,.45);
+  cursor:pointer;
+  font-size:12px;
+  font-weight:bold;
+  transition:background .22s ease,color .22s ease;
+}
+#rainy-hover-profile .rhp-tabs label:hover{
+  color:#06111f;
+  background:#bfefff;
+}
+#rainy-hover-profile .rhp-panel{
+  display:none;
+  padding:14px;
+  color:#eaf7ff;
+  background:rgba(5,18,31,.9);
+  border:1px solid rgba(120,210,235,.35);
+}
+#rainy-hover-profile #rhp-tab1:checked ~ .rhp-labels label[for="rhp-tab1"],
+#rainy-hover-profile #rhp-tab2:checked ~ .rhp-labels label[for="rhp-tab2"],
+#rainy-hover-profile #rhp-tab3:checked ~ .rhp-labels label[for="rhp-tab3"],
+#rainy-hover-profile #rhp-tab4:checked ~ .rhp-labels label[for="rhp-tab4"]{
+  color:#06111f;
+  background:#dff7ff;
+}
+#rainy-hover-profile #rhp-tab1:checked ~ .rhp-panels .rhp-p1,
+#rainy-hover-profile #rhp-tab2:checked ~ .rhp-panels .rhp-p2,
+#rainy-hover-profile #rhp-tab3:checked ~ .rhp-panels .rhp-p3,
+#rainy-hover-profile #rhp-tab4:checked ~ .rhp-panels .rhp-p4{
+  display:block;
+}}
 #rainy-hover-profile .rhp-en{
   margin-top:4px;
   color:#20a8ca;
