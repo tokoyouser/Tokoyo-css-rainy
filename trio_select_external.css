@@ -1,10 +1,70 @@
+#trio-select,
+#trio-select *{
+  box-sizing:border-box;
+}
+body:has(#trio-select){
+  min-width:0 !important;
+  background:#050607 !important;
+  background-attachment:fixed !important;
+  transition:background .35s ease;
+}
+body:has(#ts-c1:checked){
+  background:
+    radial-gradient(circle at 18% 15%,rgba(170,185,180,.16) 0 220px,transparent 225px),
+    linear-gradient(120deg,rgba(52,58,58,.38),transparent 48%,rgba(8,10,10,.55)),
+    #050607 !important;
+}
+body:has(#ts-c2:checked){
+  background:
+    radial-gradient(circle at 18% 15%,rgba(235,190,112,.18) 0 240px,transparent 245px),
+    linear-gradient(120deg,rgba(94,62,34,.38),transparent 48%,rgba(24,16,10,.65)),
+    #110d08 !important;
+}
+body:has(#ts-c3:checked){
+  background:
+    radial-gradient(circle at 82% 12%,rgba(225,180,75,.18) 0 230px,transparent 235px),
+    linear-gradient(120deg,rgba(112,20,28,.26),transparent 50%,rgba(212,164,74,.14)),
+    #030303 !important;
+}
+body:has(#trio-select) td.com1{
+  display:none !important;
+}
+body:has(#trio-select) center,
+body:has(#trio-select) table:has(#trio-select){
+  display:block !important;
+  width:100% !important;
+  max-width:none !important;
+}
+body:has(#trio-select) td.com2,
+body:has(#trio-select) td.com3{
+  display:block !important;
+  width:auto !important;
+  max-width:none !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+}
+body:has(#trio-select) td.com2 > table,
+body:has(#trio-select) td.com2 > table > tbody,
+body:has(#trio-select) td.com2 > table > tbody > tr,
+body:has(#trio-select) td.com2 > table > tbody > tr > td{
+  display:block !important;
+  width:100% !important;
+  max-width:none !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+}
 #trio-select{
   position:relative;
   overflow:hidden;
-  max-width:980px;
+  left:50%;
+  width:min(1180px,calc(100vw - 34px));
+  max-width:none;
   min-height:720px;
-  margin:18px auto;
+  margin:18px 0;
   padding:22px;
+  transform:translateX(-50%);
   color:#edf8ff;
   background:
     radial-gradient(circle at 50% 34%,rgba(255,255,255,.18) 0 140px,transparent 145px),
@@ -15,7 +75,6 @@
   font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
   line-height:1.55;
 }
-#trio-select *{box-sizing:border-box;}
 #trio-select input{display:none;}
 #trio-select .ts-bg{
   position:absolute;
@@ -85,7 +144,7 @@
   color:#eaf7ff;
   background:rgba(7,20,34,.72);
   border:1px solid rgba(180,230,245,.32);
-  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS譏取悃E",serif;
   font-weight:700;
   font-size:22px;
   text-align:center;
@@ -122,7 +181,7 @@
   background:rgba(5,8,10,.74);
   border:1px solid rgba(210,225,220,.28);
   box-shadow:0 16px 34px rgba(0,0,0,.38),inset 0 0 0 1px rgba(255,255,255,.035);
-  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS譏取悃E",serif;
   font-size:16px;
   line-height:1.85;
   letter-spacing:.03em;
@@ -339,7 +398,7 @@
 #trio-select .ts-name{
   margin-top:12px;
   color:#fff;
-  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS譏取悃E",serif;
   font-size:40px;
   line-height:1.05;
   font-weight:900;
@@ -360,7 +419,7 @@
   background:rgba(255,255,255,.045);
   border-left:4px solid #75e5ff;
   border-radius:0 14px 14px 0;
-  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS譏取悃E",serif;
   font-size:17px;
   line-height:1.78;
   text-align:left;
