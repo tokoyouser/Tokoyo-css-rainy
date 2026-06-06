@@ -1,0 +1,601 @@
+#trio-select,
+#trio-select *{
+  box-sizing:border-box;
+}
+body:has(#trio-select){
+  min-width:0 !important;
+  background:#050607 !important;
+  background-attachment:fixed !important;
+  transition:background .35s ease;
+}
+body:has(#ts-c1:checked){
+  background:
+    radial-gradient(circle at 18% 15%,rgba(170,185,180,.16) 0 220px,transparent 225px),
+    linear-gradient(120deg,rgba(52,58,58,.38),transparent 48%,rgba(8,10,10,.55)),
+    #050607 !important;
+}
+body:has(#ts-c2:checked){
+  background:
+    radial-gradient(circle at 18% 15%,rgba(235,190,112,.18) 0 240px,transparent 245px),
+    linear-gradient(120deg,rgba(94,62,34,.38),transparent 48%,rgba(24,16,10,.65)),
+    #110d08 !important;
+}
+body:has(#ts-c3:checked){
+  background:
+    radial-gradient(circle at 82% 12%,rgba(225,180,75,.18) 0 230px,transparent 235px),
+    linear-gradient(120deg,rgba(112,20,28,.26),transparent 50%,rgba(212,164,74,.14)),
+    #030303 !important;
+}
+body:has(#trio-select) td.com1{
+  display:none !important;
+}
+td.com1{
+  display:none !important;
+}
+body:has(#trio-select) center,
+body:has(#trio-select) table:has(#trio-select){
+  display:block !important;
+  width:100% !important;
+  max-width:none !important;
+}
+body:has(#trio-select) td.com2,
+body:has(#trio-select) td.com3,
+td.com2,
+td.com3{
+  display:block !important;
+  width:100% !important;
+  max-width:none !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+}
+body:has(#trio-select) td.com2 > table,
+body:has(#trio-select) td.com2 > table > tbody,
+body:has(#trio-select) td.com2 > table > tbody > tr,
+body:has(#trio-select) td.com2 > table > tbody > tr > td{
+  display:block !important;
+  width:100% !important;
+  max-width:none !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+}
+#trio-select{
+  position:relative;
+  overflow:hidden;
+  left:auto;
+  width:calc(100vw - 24px);
+  max-width:none;
+  min-height:720px;
+  margin:18px 0 18px calc(50% - 50vw + 12px);
+  padding:22px;
+  transform:none;
+  color:#edf8ff;
+  background:
+    radial-gradient(circle at 50% 34%,rgba(255,255,255,.18) 0 140px,transparent 145px),
+    linear-gradient(120deg,rgba(55,190,135,.18),transparent 28%,rgba(60,145,255,.18) 63%,rgba(255,110,90,.15)),
+    linear-gradient(180deg,#07101c,#101b2c 58%,#05080f);
+  border:1px solid rgba(190,235,255,.42);
+  box-shadow:0 20px 48px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.06);
+  font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  line-height:1.55;
+}
+#trio-select input{display:none;}
+#trio-select .ts-bg{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+#trio-select .ts-bg:before,
+#trio-select .ts-bg:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+#trio-select .ts-bg:before{
+  opacity:.18;
+  background:
+    linear-gradient(45deg,transparent 34%,rgba(255,255,255,.18) 35% 49%,transparent 50%),
+    repeating-linear-gradient(90deg,transparent 0 112px,rgba(255,255,255,.07) 112px 114px);
+}
+#trio-select .ts-bg:after{
+  opacity:.78;
+  transition:background .35s ease;
+}
+#ts-c1:checked ~ .ts-bg{
+  background:
+    radial-gradient(circle at 50% 34%,rgba(210,220,215,.13) 0 150px,transparent 155px),
+    linear-gradient(120deg,rgba(80,88,88,.20),transparent 42%,rgba(25,28,30,.22)),
+    linear-gradient(180deg,#050607,#141719 58%,#020303);
+}
+#ts-c2:checked ~ .ts-bg{
+  background:
+    radial-gradient(circle at 50% 34%,rgba(245,235,210,.22) 0 150px,transparent 155px),
+    linear-gradient(120deg,rgba(210,190,150,.20),transparent 42%,rgba(80,55,45,.16)),
+    linear-gradient(180deg,#120f0b,#211d18 58%,#090806);
+}
+#ts-c3:checked ~ .ts-bg{
+  background:
+    radial-gradient(circle at 50% 34%,rgba(222,180,85,.16) 0 150px,transparent 155px),
+    linear-gradient(120deg,rgba(195,145,55,.18),transparent 42%,rgba(80,50,10,.16)),
+    linear-gradient(180deg,#030303,#10100c 58%,#010101);
+}
+#ts-c1:checked ~ .ts-bg:after{
+  background:
+    radial-gradient(circle at 18% 28%,rgba(245,235,210,.18) 0 160px,transparent 162px),
+    linear-gradient(135deg,rgba(235,220,185,.16),transparent 45%,rgba(120,90,65,.13));
+}
+#ts-c2:checked ~ .ts-bg:after{
+  background:
+    radial-gradient(circle at 28% 22%,rgba(220,165,90,.22) 0 150px,transparent 152px),
+    linear-gradient(145deg,rgba(145,85,45,.22),transparent 42%,rgba(230,185,100,.12));
+}
+#ts-c3:checked ~ .ts-bg:after{
+  background:
+    radial-gradient(circle at 80% 20%,rgba(255,110,110,.20) 0 150px,transparent 152px),
+    linear-gradient(135deg,rgba(115,20,35,.20),transparent 42%,rgba(245,195,130,.12));
+}
+#trio-select .ts-title{
+  display:none;
+}
+#trio-select .ts-quote{
+  position:relative;
+  z-index:3;
+  display:none;
+  max-width:720px;
+  margin:0 auto 10px;
+  padding:14px 22px;
+  color:#eaf7ff;
+  background:rgba(7,20,34,.72);
+  border:1px solid rgba(180,230,245,.32);
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-weight:700;
+  font-size:22px;
+  text-align:center;
+  letter-spacing:.08em;
+  line-height:1.45;
+  box-shadow:0 12px 28px rgba(0,0,0,.28),inset 0 0 0 1px rgba(255,255,255,.04);
+}
+#ts-c1:checked ~ .ts-quote-1,
+#ts-c2:checked ~ .ts-quote-2,
+#ts-c3:checked ~ .ts-quote-3{
+  display:block;
+}
+#ts-c1:checked ~ .ts-quote-1{
+  border-left:8px solid rgba(185,205,205,.58);
+  border-radius:4px;
+}
+#ts-c2:checked ~ .ts-quote-2{
+  border-left:8px solid rgba(235,225,190,.58);
+  border-radius:18px 4px 18px 4px;
+}
+#ts-c3:checked ~ .ts-quote-3{
+  border-color:rgba(227,189,124,.45);
+  border-radius:4px 22px 4px 22px;
+  color:#f5dfac;
+}
+#trio-select .ts-lore{
+  position:relative;
+  z-index:3;
+  display:none;
+  max-width:900px;
+  margin:0 auto 16px;
+  padding:22px 28px 24px;
+  color:#ecf5f1;
+  background:rgba(5,8,10,.74);
+  border:1px solid rgba(210,225,220,.28);
+  box-shadow:0 16px 34px rgba(0,0,0,.38),inset 0 0 0 1px rgba(255,255,255,.035);
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-size:16px;
+  line-height:1.85;
+  letter-spacing:.03em;
+}
+#trio-select .ts-lore:before{
+  content:"";
+  position:absolute;
+  left:18px;
+  top:18px;
+  bottom:18px;
+  width:3px;
+  background:rgba(210,225,220,.45);
+}
+#trio-select .ts-lore-title{
+  display:block;
+  margin:0 0 12px 12px;
+  font-size:12px;
+  font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  font-weight:bold;
+  letter-spacing:.16em;
+  opacity:.78;
+}
+#trio-select .ts-lore p{
+  margin:0 0 12px 12px;
+}
+#trio-select .ts-lore p:last-child{
+  margin-bottom:0;
+}
+#ts-c1:checked ~ .ts-lore-1,
+#ts-c2:checked ~ .ts-lore-2,
+#ts-c3:checked ~ .ts-lore-3{
+  display:block;
+}
+#ts-c1:checked ~ .ts-lore-1{
+  border-radius:4px;
+  border-left:7px solid rgba(185,205,205,.52);
+}
+#ts-c1:checked ~ .ts-lore-1:before{
+  background:rgba(185,205,205,.5);
+}
+#ts-c2:checked ~ .ts-lore-2{
+  color:#f0e4cb;
+  border-color:rgba(235,225,190,.3);
+  border-left:7px solid rgba(235,225,190,.58);
+  border-radius:18px 4px 18px 4px;
+  background:rgba(17,12,8,.76);
+}
+#ts-c2:checked ~ .ts-lore-2:before{
+  background:rgba(235,225,190,.55);
+}
+#ts-c3:checked ~ .ts-lore-3{
+  color:#f4dfb3;
+  border-color:rgba(227,189,124,.38);
+  border-left:7px solid rgba(227,189,124,.62);
+  border-radius:4px 24px 4px 24px;
+  background:rgba(4,4,3,.78);
+}
+#ts-c3:checked ~ .ts-lore-3:before{
+  background:rgba(227,189,124,.58);
+}
+#trio-select .ts-stage{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:minmax(420px,1fr) 340px;
+  gap:18px;
+  align-items:center;
+  margin-top:8px;
+  min-height:560px;
+}
+#trio-select .ts-arrow{
+  position:absolute;
+  top:50%;
+  z-index:8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:58px;
+  height:116px;
+  margin-top:-58px;
+  color:#edf8ff;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.02)),
+    rgba(5,10,12,.72);
+  border:1px solid rgba(210,225,220,.38);
+  font-size:34px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 14px 26px rgba(0,0,0,.42),inset 0 0 0 1px rgba(255,255,255,.04);
+  transition:transform .22s ease,background .22s ease,color .22s ease,border-color .22s ease;
+}
+#trio-select .ts-prev{
+  left:4px;
+  border-radius:26px 6px 6px 26px;
+}
+#trio-select .ts-next{
+  right:4px;
+  border-radius:6px 26px 26px 6px;
+}
+#trio-select .ts-arrow:hover{
+  transform:translateY(-4px) scale(1.04);
+  color:#fff;
+  border-color:rgba(255,255,255,.62);
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.20),rgba(255,255,255,.04)),
+    rgba(12,18,20,.88);
+}
+#trio-select .ts-prev,
+#trio-select .ts-next,
+#trio-select .ts-card{
+  display:none;
+}
+#ts-c1:checked ~ .ts-stage .ts-prev-1,
+#ts-c2:checked ~ .ts-stage .ts-prev-2,
+#ts-c3:checked ~ .ts-stage .ts-prev-3,
+#ts-c1:checked ~ .ts-stage .ts-next-1,
+#ts-c2:checked ~ .ts-stage .ts-next-2,
+#ts-c3:checked ~ .ts-stage .ts-next-3{
+  display:flex;
+}
+#ts-c1:checked ~ .ts-stage .ts-card-1,
+#ts-c2:checked ~ .ts-stage .ts-card-2,
+#ts-c3:checked ~ .ts-stage .ts-card-3{
+  display:block;
+}
+#trio-select .ts-figure{
+  position:relative;
+  min-height:540px;
+  overflow:visible;
+}
+#trio-select .ts-ring{
+  position:absolute;
+  left:50%;
+  bottom:28px;
+  width:320px;
+  height:470px;
+  transform:translateX(-50%);
+  border:4px double rgba(210,245,255,.38);
+  border-radius:180px 180px 38px 38px;
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(120,220,250,.08));
+}
+#trio-select .ts-character img{
+  position:relative;
+  z-index:2;
+  max-width:420px;
+  max-height:550px;
+  object-fit:contain;
+  filter:drop-shadow(0 18px 18px rgba(0,0,0,.55));
+  transition:transform .28s ease;
+}
+#trio-select .ts-character{
+  position:absolute;
+  left:50%;
+  bottom:0;
+  display:block;
+  opacity:.42;
+  filter:grayscale(.25) brightness(.72);
+  transform:translateX(-50%) translateY(-90px) scale(.54);
+  transition:transform .35s ease,opacity .35s ease,filter .35s ease;
+}
+#trio-select .ts-character label{
+  display:block;
+  cursor:pointer;
+}
+#trio-select .ts-character:hover img{
+  transform:translateY(-8px) scale(1.02);
+}
+#ts-c1:checked ~ .ts-stage .ts-character-1,
+#ts-c2:checked ~ .ts-stage .ts-character-2,
+#ts-c3:checked ~ .ts-stage .ts-character-3{
+  z-index:4;
+  opacity:1;
+  filter:none;
+  transform:translateX(-50%) translateY(0) scale(1);
+}
+#ts-c1:checked ~ .ts-stage .ts-character-2,
+#ts-c2:checked ~ .ts-stage .ts-character-3,
+#ts-c3:checked ~ .ts-stage .ts-character-1{
+  z-index:2;
+  transform:translateX(-118%) translateY(-96px) scale(.52);
+}
+#ts-c1:checked ~ .ts-stage .ts-character-3,
+#ts-c2:checked ~ .ts-stage .ts-character-1,
+#ts-c3:checked ~ .ts-stage .ts-character-2{
+  z-index:2;
+  transform:translateX(18%) translateY(-96px) scale(.52);
+}
+#trio-select .ts-card{
+  min-height:380px;
+  position:relative;
+  overflow:hidden;
+  padding:22px;
+  color:#eaf7ff;
+  background:rgba(7,20,34,.86);
+  border:1px solid rgba(160,230,250,.42);
+  border-radius:0 26px 26px 26px;
+  box-shadow:0 18px 34px rgba(0,0,0,.42),inset 0 0 0 1px rgba(255,255,255,.05);
+}
+#trio-select .ts-card:before,
+#trio-select .ts-card:after{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+}
+#trio-select .ts-kicker{
+  display:inline-block;
+  padding:3px 10px;
+  color:#06111c;
+  background:#dff7ff;
+  border-radius:14px;
+  font-size:12px;
+  font-weight:bold;
+}
+#trio-select .ts-name{
+  margin-top:12px;
+  color:#fff;
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-size:40px;
+  line-height:1.05;
+  font-weight:900;
+  letter-spacing:.04em;
+}
+#trio-select .ts-en{
+  margin-top:4px;
+  color:#69dfff;
+  font-size:14px;
+  font-weight:bold;
+  letter-spacing:.12em;
+}
+#trio-select .ts-copy{
+  margin-top:18px;
+  min-height:188px;
+  padding:18px 18px 20px;
+  color:#dcecf5;
+  background:rgba(255,255,255,.045);
+  border-left:4px solid #75e5ff;
+  border-radius:0 14px 14px 0;
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-size:17px;
+  line-height:1.78;
+  text-align:left;
+}
+#ts-c1:checked ~ .ts-stage .ts-card{border-color:rgba(120,235,180,.6);}
+#ts-c2:checked ~ .ts-stage .ts-card{border-color:rgba(120,190,255,.62);}
+#ts-c3:checked ~ .ts-stage .ts-card{border-color:rgba(255,155,125,.6);}
+#ts-c1:checked ~ .ts-stage .ts-card{
+  background:rgba(8,12,13,.88);
+  border-color:rgba(185,205,205,.45);
+  border-radius:6px;
+  border-width:1px 1px 1px 8px;
+  box-shadow:0 18px 34px rgba(0,0,0,.42),inset 0 0 0 1px rgba(255,255,255,.04);
+}
+#ts-c1:checked ~ .ts-stage .ts-card:before{
+  inset:12px;
+  border-top:1px solid rgba(185,205,205,.18);
+  border-bottom:1px solid rgba(185,205,205,.18);
+}
+#ts-c1:checked ~ .ts-stage .ts-card:after{
+  right:14px;
+  top:14px;
+  width:42px;
+  height:42px;
+  border:1px solid rgba(185,205,205,.28);
+  transform:rotate(45deg);
+}
+#ts-c1:checked ~ .ts-stage .ts-copy{
+  background:rgba(210,225,222,.08);
+  border-color:rgba(185,205,205,.26);
+}
+#ts-c1:checked ~ .ts-stage .ts-en{
+  color:#b9d8d4;
+}
+#ts-c1:checked ~ .ts-stage .ts-copy{
+  border-left-color:#b9d8d4;
+}
+#ts-c2:checked ~ .ts-stage .ts-card{
+  background:rgba(30,23,16,.88);
+  border-color:rgba(235,225,190,.48);
+  border-radius:18px 4px 18px 4px;
+  border-style:solid;
+  box-shadow:0 18px 34px rgba(0,0,0,.46),inset 0 0 0 2px rgba(95,62,34,.26);
+}
+#ts-c2:checked ~ .ts-stage .ts-card:before{
+  left:12px;
+  right:12px;
+  top:12px;
+  bottom:12px;
+  border:1px dashed rgba(235,225,190,.22);
+}
+#ts-c2:checked ~ .ts-stage .ts-card:after{
+  right:-28px;
+  bottom:-28px;
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  border:1px solid rgba(235,225,190,.18);
+}
+#ts-c2:checked ~ .ts-stage .ts-copy{
+  background:rgba(244,234,210,.09);
+  border-color:rgba(235,225,190,.28);
+}
+#ts-c2:checked ~ .ts-stage .ts-en{
+  color:#edd8a6;
+}
+#ts-c2:checked ~ .ts-stage .ts-copy{
+  border-left-color:#edd8a6;
+}
+#ts-c3:checked ~ .ts-stage .ts-card{
+  background:rgba(5,5,4,.92);
+  border-color:rgba(227,189,124,.58);
+  border-radius:4px 28px 4px 28px;
+  border-width:2px;
+  box-shadow:0 18px 34px rgba(0,0,0,.5),inset 0 0 0 1px rgba(227,189,124,.18);
+}
+#ts-c3:checked ~ .ts-stage .ts-card:before{
+  inset:10px;
+  border:1px solid rgba(227,189,124,.24);
+}
+#ts-c3:checked ~ .ts-stage .ts-card:after{
+  right:16px;
+  top:16px;
+  width:54px;
+  height:54px;
+  border:1px solid rgba(227,189,124,.28);
+  border-radius:50%;
+  box-shadow:inset 0 0 0 12px rgba(227,189,124,.04);
+}
+#ts-c3:checked ~ .ts-stage .ts-copy{
+  background:rgba(227,189,124,.10);
+  border-color:rgba(227,189,124,.34);
+}
+#ts-c3:checked ~ .ts-stage .ts-en{
+  color:#e3bd7c;
+}
+#ts-c3:checked ~ .ts-stage .ts-copy{
+  border-left-color:#e3bd7c;
+}
+#ts-c1:checked ~ .ts-stage .ts-ring{
+  border-color:rgba(185,205,205,.44);
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(70,80,82,.14));
+}
+#ts-c2:checked ~ .ts-stage .ts-ring{
+  border-color:rgba(235,225,190,.55);
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(180,150,100,.10));
+}
+#ts-c3:checked ~ .ts-stage .ts-ring{
+  border-color:rgba(225,180,75,.64);
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(175,125,35,.14));
+}
+#ts-c1:checked ~ .ts-stage .ts-arrow{
+  border-color:rgba(185,205,205,.46);
+  color:#d8e1df;
+}
+#ts-c2:checked ~ .ts-stage .ts-arrow{
+  border-color:rgba(235,225,190,.50);
+  color:#f4ead2;
+}
+#ts-c3:checked ~ .ts-stage .ts-arrow{
+  border-color:rgba(227,189,124,.56);
+  color:#e3bd7c;
+}
+#ts-c1:checked ~ .ts-stage .ts-card .ts-kicker{
+  background:#d8e1df;
+}
+#ts-c1:checked ~ .ts-stage .ts-card .ts-kicker{
+  border-radius:2px;
+  letter-spacing:.12em;
+}
+#ts-c2:checked ~ .ts-stage .ts-card .ts-kicker{
+  background:#f4ead2;
+}
+#ts-c2:checked ~ .ts-stage .ts-card .ts-kicker{
+  border-radius:14px 3px 14px 3px;
+}
+#ts-c3:checked ~ .ts-stage .ts-card .ts-kicker{
+  background:#e3bd7c;
+}
+#ts-c3:checked ~ .ts-stage .ts-card .ts-kicker{
+  border-radius:2px 16px 2px 16px;
+  letter-spacing:.1em;
+}
+@media(max-width:780px){
+  #trio-select{padding:14px;}
+  #trio-select .ts-stage{
+    grid-template-columns:1fr;
+  }
+  #trio-select .ts-card{
+    grid-column:1 / -1;
+  }
+  #trio-select .ts-arrow{
+    width:46px;
+    height:92px;
+    margin-top:-46px;
+  }
+  #trio-select .ts-lore{
+    padding:18px 20px 20px;
+    font-size:15px;
+  }
+}
+
+/* PBC comment auto-BR guard */
+#trio-select > br,
+#trio-select .ts-bg + br,
+#trio-select .ts-title + br,
+#trio-select .ts-lore > br,
+#trio-select .ts-quote + br,
+#trio-select .ts-stage > br,
+#trio-select .ts-figure > br,
+#trio-select .ts-character > br,
+#trio-select .ts-card > br{
+  display:none;
+}
