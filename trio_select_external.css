@@ -29,6 +29,9 @@ body:has(#ts-c3:checked){
 body:has(#trio-select) td.com1{
   display:none !important;
 }
+td.com1{
+  display:none !important;
+}
 body:has(#trio-select) center,
 body:has(#trio-select) table:has(#trio-select){
   display:block !important;
@@ -36,9 +39,11 @@ body:has(#trio-select) table:has(#trio-select){
   max-width:none !important;
 }
 body:has(#trio-select) td.com2,
-body:has(#trio-select) td.com3{
+body:has(#trio-select) td.com3,
+td.com2,
+td.com3{
   display:block !important;
-  width:auto !important;
+  width:100% !important;
   max-width:none !important;
   padding:0 !important;
   background:transparent !important;
@@ -58,13 +63,13 @@ body:has(#trio-select) td.com2 > table > tbody > tr > td{
 #trio-select{
   position:relative;
   overflow:hidden;
-  left:50%;
-  width:min(1180px,calc(100vw - 34px));
+  left:auto;
+  width:calc(100vw - 24px);
   max-width:none;
   min-height:720px;
-  margin:18px 0;
+  margin:18px 0 18px calc(50% - 50vw + 12px);
   padding:22px;
-  transform:translateX(-50%);
+  transform:none;
   color:#edf8ff;
   background:
     radial-gradient(circle at 50% 34%,rgba(255,255,255,.18) 0 140px,transparent 145px),
