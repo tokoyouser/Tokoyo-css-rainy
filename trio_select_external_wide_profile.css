@@ -195,7 +195,7 @@ body:has(#trio-select) td.com2 > table > tbody > tr > td{
   color:#eaf7ff;
   background:rgba(7,20,34,.72);
   border:1px solid rgba(180,230,245,.32);
-  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS譏取悃E",serif;
   font-weight:700;
   font-size:22px;
   text-align:center;
@@ -232,7 +232,7 @@ body:has(#trio-select) td.com2 > table > tbody > tr > td{
   background:rgba(5,8,10,.74);
   border:1px solid rgba(210,225,220,.28);
   box-shadow:0 16px 34px rgba(0,0,0,.38),inset 0 0 0 1px rgba(255,255,255,.035);
-  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS譏取悃E",serif;
   font-size:16px;
   line-height:1.85;
   letter-spacing:.03em;
@@ -449,7 +449,7 @@ body:has(#trio-select) td.com2 > table > tbody > tr > td{
 #trio-select .ts-name{
   margin-top:12px;
   color:#fff;
-  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS譏取悃E",serif;
   font-size:40px;
   line-height:1.05;
   font-weight:900;
@@ -470,7 +470,7 @@ body:has(#trio-select) td.com2 > table > tbody > tr > td{
   background:rgba(255,255,255,.045);
   border-left:4px solid #75e5ff;
   border-radius:0 14px 14px 0;
-  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS譏取悃E",serif;
   font-size:17px;
   line-height:1.78;
   text-align:left;
@@ -615,21 +615,114 @@ body:has(#trio-select) td.com2 > table > tbody > tr > td{
   letter-spacing:.1em;
 }
 @media(max-width:780px){
-  #trio-select{padding:14px;}
+  #trio-select{
+    width:calc(100vw - 8px);
+    margin:10px 0 10px calc(50% - 50vw + 4px);
+    padding:10px;
+    min-height:auto;
+    overflow:hidden;
+  }
+  #trio-select .ts-lore{
+    margin-bottom:10px;
+    padding:16px 14px 16px 18px;
+    font-size:14px;
+    line-height:1.72;
+    letter-spacing:0;
+  }
+  #trio-select .ts-lore:before{
+    left:10px;
+    top:14px;
+    bottom:14px;
+  }
+  #trio-select .ts-lore-title,
+  #trio-select .ts-lore p{
+    margin-left:8px;
+  }
+  #trio-select .ts-quote{
+    max-width:none;
+    margin-bottom:8px;
+    padding:12px 14px;
+    font-size:18px;
+    line-height:1.45;
+    letter-spacing:.04em;
+  }
   #trio-select .ts-stage{
     grid-template-columns:1fr;
+    gap:10px;
+    min-height:auto;
+  }
+  #trio-select .ts-figure{
+    min-height:430px;
+  }
+  #trio-select .ts-ring{
+    bottom:18px;
+    width:240px;
+    height:365px;
+    border-radius:140px 140px 30px 30px;
+  }
+  #trio-select .ts-character img{
+    max-width:310px;
+    max-height:430px;
+  }
+  #ts-c1:checked ~ .ts-stage .ts-character-1,
+  #ts-c2:checked ~ .ts-stage .ts-character-2,
+  #ts-c3:checked ~ .ts-stage .ts-character-3{
+    transform:translateX(-50%) translateY(0) scale(1);
+  }
+  #ts-c1:checked ~ .ts-stage .ts-character-2,
+  #ts-c2:checked ~ .ts-stage .ts-character-3,
+  #ts-c3:checked ~ .ts-stage .ts-character-1{
+    transform:translateX(-108%) translateY(-70px) scale(.42);
+  }
+  #ts-c1:checked ~ .ts-stage .ts-character-3,
+  #ts-c2:checked ~ .ts-stage .ts-character-1,
+  #ts-c3:checked ~ .ts-stage .ts-character-2{
+    transform:translateX(8%) translateY(-70px) scale(.42);
   }
   #trio-select .ts-card{
     grid-column:1 / -1;
+    min-height:auto;
+    padding:16px;
   }
   #trio-select .ts-arrow{
-    width:46px;
-    height:92px;
-    margin-top:-46px;
+    width:42px;
+    height:82px;
+    margin-top:-41px;
+    font-size:28px;
   }
-  #trio-select .ts-lore{
-    padding:18px 20px 20px;
+  #trio-select .ts-prev{
+    left:0;
+  }
+  #trio-select .ts-next{
+    right:0;
+  }
+  #trio-select .ts-name{
+    font-size:32px;
+  }
+  #trio-select .ts-copy{
+    min-height:auto;
+    margin-top:14px;
+    padding:14px;
     font-size:15px;
+    line-height:1.7;
+  }
+}
+@media(max-width:420px){
+  #trio-select .ts-figure{
+    min-height:390px;
+  }
+  #trio-select .ts-ring{
+    width:210px;
+    height:330px;
+  }
+  #trio-select .ts-character img{
+    max-width:280px;
+    max-height:390px;
+  }
+  #trio-select .ts-arrow{
+    width:36px;
+    height:72px;
+    margin-top:-36px;
   }
 }
 
