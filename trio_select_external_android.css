@@ -195,7 +195,7 @@ body:has(#trio-select) td.com2 > table > tbody > tr > td{
   color:#eaf7ff;
   background:rgba(7,20,34,.72);
   border:1px solid rgba(180,230,245,.32);
-  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS譏取悃E",serif;
   font-weight:700;
   font-size:22px;
   text-align:center;
@@ -232,7 +232,7 @@ body:has(#trio-select) td.com2 > table > tbody > tr > td{
   background:rgba(5,8,10,.74);
   border:1px solid rgba(210,225,220,.28);
   box-shadow:0 16px 34px rgba(0,0,0,.38),inset 0 0 0 1px rgba(255,255,255,.035);
-  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS譏取悃E",serif;
   font-size:16px;
   line-height:1.85;
   letter-spacing:.03em;
@@ -449,7 +449,7 @@ body:has(#trio-select) td.com2 > table > tbody > tr > td{
 #trio-select .ts-name{
   margin-top:12px;
   color:#fff;
-  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS譏取悃E",serif;
   font-size:40px;
   line-height:1.05;
   font-weight:900;
@@ -470,7 +470,7 @@ body:has(#trio-select) td.com2 > table > tbody > tr > td{
   background:rgba(255,255,255,.045);
   border-left:4px solid #75e5ff;
   border-radius:0 14px 14px 0;
-  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS明朝E",serif;
+  font-family:"Yu Mincho","Hiragino Mincho ProN","HGS譏取悃E",serif;
   font-size:17px;
   line-height:1.78;
   text-align:left;
@@ -653,6 +653,7 @@ body:has(#trio-select) td.com2 > table > tbody > tr > td{
   }
   #trio-select .ts-figure{
     min-height:430px;
+    isolation:isolate;
   }
   #trio-select .ts-ring{
     bottom:18px;
@@ -664,20 +665,40 @@ body:has(#trio-select) td.com2 > table > tbody > tr > td{
     max-width:310px;
     max-height:430px;
   }
+  #trio-select .ts-character{
+    opacity:.18;
+    filter:grayscale(1) brightness(.42) contrast(1.12);
+  }
+  #trio-select .ts-character label{
+    cursor:pointer;
+  }
   #ts-c1:checked ~ .ts-stage .ts-character-1,
   #ts-c2:checked ~ .ts-stage .ts-character-2,
   #ts-c3:checked ~ .ts-stage .ts-character-3{
+    z-index:5;
+    opacity:1;
+    filter:none;
     transform:translateX(-50%) translateY(0) scale(1);
   }
   #ts-c1:checked ~ .ts-stage .ts-character-2,
   #ts-c2:checked ~ .ts-stage .ts-character-3,
   #ts-c3:checked ~ .ts-stage .ts-character-1{
-    transform:translateX(-108%) translateY(-70px) scale(.42);
+    z-index:1;
+    transform:translateX(-82%) translateY(-38px) scale(.72);
   }
   #ts-c1:checked ~ .ts-stage .ts-character-3,
   #ts-c2:checked ~ .ts-stage .ts-character-1,
   #ts-c3:checked ~ .ts-stage .ts-character-2{
-    transform:translateX(8%) translateY(-70px) scale(.42);
+    z-index:1;
+    transform:translateX(-18%) translateY(-38px) scale(.72);
+  }
+  #ts-c1:checked ~ .ts-stage .ts-character-2 img,
+  #ts-c2:checked ~ .ts-stage .ts-character-3 img,
+  #ts-c3:checked ~ .ts-stage .ts-character-1 img,
+  #ts-c1:checked ~ .ts-stage .ts-character-3 img,
+  #ts-c2:checked ~ .ts-stage .ts-character-1 img,
+  #ts-c3:checked ~ .ts-stage .ts-character-2 img{
+    filter:drop-shadow(0 12px 18px rgba(0,0,0,.42));
   }
   #trio-select .ts-card{
     grid-column:1 / -1;
@@ -689,6 +710,8 @@ body:has(#trio-select) td.com2 > table > tbody > tr > td{
     height:82px;
     margin-top:-41px;
     font-size:28px;
+    background:rgba(5,8,10,.58);
+    backdrop-filter:blur(2px);
   }
   #trio-select .ts-prev{
     left:0;
@@ -718,6 +741,16 @@ body:has(#trio-select) td.com2 > table > tbody > tr > td{
   #trio-select .ts-character img{
     max-width:280px;
     max-height:390px;
+  }
+  #ts-c1:checked ~ .ts-stage .ts-character-2,
+  #ts-c2:checked ~ .ts-stage .ts-character-3,
+  #ts-c3:checked ~ .ts-stage .ts-character-1{
+    transform:translateX(-84%) translateY(-34px) scale(.68);
+  }
+  #ts-c1:checked ~ .ts-stage .ts-character-3,
+  #ts-c2:checked ~ .ts-stage .ts-character-1,
+  #ts-c3:checked ~ .ts-stage .ts-character-2{
+    transform:translateX(-16%) translateY(-34px) scale(.68);
   }
   #trio-select .ts-arrow{
     width:36px;
